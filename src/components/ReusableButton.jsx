@@ -2,7 +2,7 @@ import React from 'react'
 
 function ReusableButton({onClick, text, color}) {
     const buttonStyle= {
-        backgroundColor: color,
+        backgroundColor: color || 'lightblue',
         border: 'none',
         padding: '10px 20px',
         color: 'white',
