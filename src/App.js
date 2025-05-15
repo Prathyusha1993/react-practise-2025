@@ -4,11 +4,13 @@ import AppAccordion from './components/accordion/AppAccordion';
 import CounterApp from './components/CounterApp';
 import DebounceInputSearch from './components/DebounceInputSearch';
 import DropdownMenu from './components/dropdownMenu/DropdownMenu';
+import DynamicUsage from './components/dynamicFormJsonSchema/DynamicUsage';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
 import StopwatchApp from './components/StopwatchApp';
 import TabsEx from './components/tabsComponents/TabsEx';
+import AppTheme from './components/themeUsingContext/AppTheme';
 import TodoApp from './components/TodoApp';
 import UseCallbackEx from './components/useMemoExamples/UseCallbackEx';
 
@@ -32,6 +34,8 @@ function App() {
       <TabsEx />
       <DropdownMenu onSelect={handleSelect} options={['Option1', 'Option2', 'Option3']}/>
       <ExampleUsage />
+      <DynamicUsage />
+      <AppTheme />
     </div>
   );
 }

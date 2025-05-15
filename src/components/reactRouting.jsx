@@ -10,6 +10,10 @@ function About(){
     return <h2>About</h2>
 }
 
+function Contact(){
+    return <h2>Contact</h2>
+}
+
 // dynamic route ex:
 function UserProfile(){
     const {id} = useParams();
@@ -35,6 +39,7 @@ function reactRouting() {
             <Route path='/user/:id' element={<UserProfile />} />   // dynamic route ex:
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
             <Route path='/dashboard' element={
                 <ProtectedRoute isAuthenticated={userLoggedIn}>
                     <Dashboard />
@@ -45,5 +50,3 @@ function reactRouting() {
 }
 
 export default reactRouting;
-
-
