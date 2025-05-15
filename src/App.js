@@ -5,6 +5,7 @@ import CounterApp from './components/CounterApp';
 import DebounceInputSearch from './components/DebounceInputSearch';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import StopwatchApp from './components/StopwatchApp';
+import TabsEx from './components/tabsComponents/TabsEx';
 import TodoApp from './components/TodoApp';
 import UseCallbackEx from './components/useMemoExamples/UseCallbackEx';
 
@@ -20,6 +21,7 @@ function App() {
       <AppModal />
       <UseCallbackEx />
       <AppAccordion />
+      <TabsEx />
     </div>
   );
 }
