@@ -1,10 +1,13 @@
 import './App.css';
 import AppModal from './components/aboutModal/AppModal';
 import AppAccordion from './components/accordion/AppAccordion';
+import ChatApp from './components/chatAppUI/ChatApp';
 import CounterApp from './components/CounterApp';
 import DebounceInputSearch from './components/DebounceInputSearch';
 import DropdownMenu from './components/dropdownMenu/DropdownMenu';
 import DynamicUsage from './components/dynamicFormJsonSchema/DynamicUsage';
+import FetchUsers from './components/fetchApisndSideEffects/FetchUsers';
+import InfiniteScrollPagination from './components/fetchApisndSideEffects/InfiniteScrollPagination';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
@@ -36,6 +39,9 @@ function App() {
       <ExampleUsage />
       <DynamicUsage />
       <AppTheme />
+      <FetchUsers />
+      {/* <InfiniteScrollPagination />  */}   //uncomment to see result
+      <ChatApp />
     </div>
   );
 }

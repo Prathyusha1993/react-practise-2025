@@ -6,11 +6,11 @@ function lazyLoading() {
   return (
     <div>
         <h1>Home</h1>
-        <Suspense fallabck={<div>Loading....</div>}>
+        <Suspense fallback={<div>Loading....</div>}>
         <About />
         </Suspense>
     </div>
   )
 }
 
-export default lazyLoading
+export default lazyLoading;

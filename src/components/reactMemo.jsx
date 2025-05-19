@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-// Without React.memo, Greeting would re-render every time reactMemo re-renders.
-// react.memo is a higher order componnet used infunctional componnets, to prevent rerendring of the app if props haven't changed.
+// Without React.memo, Greeting would re-render every time reactMemo component re-renders.
+// react.memo is a higher order componnet used in functional componnets, to prevent rerendring of the app if props haven't changed.
 const Greeting = React.memo(({name}) => {
     console.log('rendered:', name);
     return <p> Hello {name}</p>;
