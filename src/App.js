@@ -8,6 +8,9 @@ import DropdownMenu from './components/dropdownMenu/DropdownMenu';
 import DynamicUsage from './components/dynamicFormJsonSchema/DynamicUsage';
 import FetchUsers from './components/fetchApisndSideEffects/FetchUsers';
 import InfiniteScrollPagination from './components/fetchApisndSideEffects/InfiniteScrollPagination';
+import DynamicFormUsage from './components/formValidation/DynamicFormUsage';
+import DynamicFormValidation from './components/formValidation/DynamicFormValidation';
+import FormValidation from './components/formValidation/FormValidation';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
@@ -42,6 +45,8 @@ function App() {
       <FetchUsers />
       {/* <InfiniteScrollPagination />  */}   //uncomment to see result
       <ChatApp />
+      <FormValidation />
+      <DynamicFormUsage />
     </div>
   );
 }

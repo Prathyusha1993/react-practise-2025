@@ -4,7 +4,8 @@ import formDataSchema from './formDataSchema.json';
 
 function DynamicUsage() {
 
-    const handleFormSubmit = (data) => {
+    const handleFormSubmit = (e, data) => {
+      e.preventDefault();
         console.log('Form submitted:', data);
         // Perform any action with the submitted data
     } 
