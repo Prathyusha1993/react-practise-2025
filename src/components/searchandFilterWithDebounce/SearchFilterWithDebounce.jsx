@@ -8,11 +8,13 @@ function SearchFilterWithDebounce() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
-  const fetchMockData = (searchTerm, category) => {
+  const fetchMockData = (searchTerm, category, page=1, limit=10) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        const filtered = allItems;
+        let filtered = allItems;
         if (category !== "All") {
           filtered = filtered.filter((item) => item.category === category);
         }
@@ -21,17 +23,26 @@ function SearchFilterWithDebounce() {
             item.name.toLowerCase().includes(searchTerm.toLowerCase())
           );
         }
-        resolve(filtered);
+        const startIndex = (page-1)*limit;
+        const paginated = filtered.slice(startIndex, startIndex + limit);
+        resolve({
+          data: paginated,
+          hasMore: startIndex + limit < filtered.length});
       }, 500);
     });
   };
 
   useEffect(() => {
     setLoading(true);
-    fetchMockData(debounceTerm, selectedCategory).then((data) => {
-      setResults(data);
+    fetchMockData(debounceTerm, selectedCategory, page).then(({data, hasMore}) => {
+      setResults(prev => page === 1 ? data : [...prev, ...data]);
+      setHasMore(hasMore);
       setLoading(false);
     });
+  }, [debounceTerm, selectedCategory,page]);
+
+  useEffect(() => {
+    setPage(1);
   }, [debounceTerm, selectedCategory]);
 
   useEffect(() => {
@@ -49,6 +60,20 @@ function SearchFilterWithDebounce() {
 
     return () => clearTimeout(timer);
   }, [inputTerm]);
+
+  const handleScroll = () => {
+    if(window.innerHeight + document.documentElement.scrollTop >= 
+      document.documentElement.offsetHeight - 200 && 
+      hasMore && !loading
+    ){
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasMore, loading]);
 
   // useEffect(() => {
   //   if (debounceTerm) {
@@ -71,14 +96,13 @@ function SearchFilterWithDebounce() {
           <option key={categ} value={categ}>{categ}</option>
         ))}
       </select>
-
-      {loading ? (<p>Loading...</p>) : (
+      
         <ul>
           {results.map((item) => (
             <li key={item.id}>{item.name} - {item.price}</li>
           ))}
         </ul>
-      )}
+      {loading && <p>Loading...</p>}
     </div>
   );
 }

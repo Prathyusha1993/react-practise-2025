@@ -9,15 +9,17 @@ import DynamicUsage from './components/dynamicFormJsonSchema/DynamicUsage';
 import FetchUsers from './components/fetchApisndSideEffects/FetchUsers';
 import InfiniteScrollPagination from './components/fetchApisndSideEffects/InfiniteScrollPagination';
 import DynamicFormUsage from './components/formValidation/DynamicFormUsage';
-import DynamicFormValidation from './components/formValidation/DynamicFormValidation';
 import FormValidation from './components/formValidation/FormValidation';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
+import SearchFilterWithDebounce from './components/searchandFilterWithDebounce/SearchFilterWithDebounce';
 import StopwatchApp from './components/StopwatchApp';
 import TabsEx from './components/tabsComponents/TabsEx';
 import AppTheme from './components/themeUsingContext/AppTheme';
 import TodoApp from './components/TodoApp';
+import TodoAppAddEditDelete from './components/todoWithContextAPI/TodoAppAddEditDelete';
+import TodoAppWithContext from './components/todoWithContextAPI/TodoAppWithContext';
 import UseCallbackEx from './components/useMemoExamples/UseCallbackEx';
 
 function App() {
@@ -47,6 +49,9 @@ function App() {
       <ChatApp />
       <FormValidation />
       <DynamicFormUsage />
+      <SearchFilterWithDebounce />
+      {/* <TodoAppWithContext /> */}
+      <TodoAppAddEditDelete />
     </div>
   );
 }
