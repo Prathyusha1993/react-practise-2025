@@ -13,13 +13,14 @@ import FormValidation from './components/formValidation/FormValidation';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
+import ModalExampleUsage from './components/resuableModal/ModalExampleUsage';
 import SearchFilterWithDebounce from './components/searchandFilterWithDebounce/SearchFilterWithDebounce';
 import StopwatchApp from './components/StopwatchApp';
 import TabsEx from './components/tabsComponents/TabsEx';
 import AppTheme from './components/themeUsingContext/AppTheme';
 import TodoApp from './components/TodoApp';
+import AppFinal from './components/todoWithContextAPI/AppFinal';
 import TodoAppAddEditDelete from './components/todoWithContextAPI/TodoAppAddEditDelete';
-import TodoAppWithContext from './components/todoWithContextAPI/TodoAppWithContext';
 import UseCallbackEx from './components/useMemoExamples/UseCallbackEx';
 
 function App() {
@@ -50,8 +51,9 @@ function App() {
       <FormValidation />
       <DynamicFormUsage />
       <SearchFilterWithDebounce />
-      {/* <TodoAppWithContext /> */}
       <TodoAppAddEditDelete />
+      <AppFinal />
+      <ModalExampleUsage />
     </div>
   );
 }

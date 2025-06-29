@@ -1,36 +1,21 @@
 import React, { useState } from 'react'
+import {useTodos} from './TodoCreateContext';
 
 function TodoAppWithContext() {
+    const {todos, addTodo, deleteTodo, editTodo, toggleComplete} = useTodos();
     const [inputTodo, setInputTodo] = useState('');
-    const [todos, setTodos] = useState([]);
     const [editTodoId, setEditTodoId] = useState(null);
     const [editInput, setEditInput] = useState('');
 
     const handleSubmitTodo = (e) => {
         e.preventDefault();
-        if(!inputTodo.trim()){
-            return;
-        }
-        setTodos([...todos, {text: inputTodo, completed: false}]);
+        addTodo(inputTodo);
         setInputTodo('');
-    };
-
-    const handleDeleteTodo = (id) => {
-        setTodos(todos.filter((_, i) => i !== id));
-    };
-
-    const handleEditTodo = (index) => {
-        setEditTodoId(index);
-        setEditInput(todos[index].text);
     };
 
     const handleSubmitEditTodo = (e, i) => {
         e.preventDefault();
-        if(!editInput.trim()){
-            return;
-        }
-        const updatedTodos = todos.map((todo, index) => (index === i ? {...todo, text:editInput} : todo))
-        setTodos(updatedTodos);
+        editTodo(i, editInput);
         handleCancel();
     }
 
@@ -39,9 +24,9 @@ function TodoAppWithContext() {
         setEditTodoId(null);
     }
 
-    const toggleCompleted = (index) => {
-        const newTodos = todos.map((todo, i) => (i === index ? {...todo, completed: !todo.completed} : todo))
-        setTodos(newTodos);
+    const handleEditTodo = (i) => {
+        setEditTodoId(i);
+        setEditInput(todos[i].text);
     }
 
   return (
@@ -62,9 +47,9 @@ function TodoAppWithContext() {
                     </form>
                 ) : (
                     <>
-                        <span onClick={() => toggleCompleted(index)}>{todo.text}</span>
+                        <span onClick={() => toggleComplete(index)}>{todo.text}</span>
                         <button onClick={() => handleEditTodo(index)}>Edit</button>
-                        <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+                        <button onClick={() => deleteTodo(index)}>Delete</button>
                     </>
                 )}
             </li>
