@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 function ModalComponentPractise({isOpen, onClose, children}) {
     const modalRef = useRef(null);
+    const contentRef = useRef(null);
 
     const handleKeyDown = (e) =>{
         if(e.key === 'escape'){
@@ -33,8 +34,8 @@ function ModalComponentPractise({isOpen, onClose, children}) {
     if(!isOpen) return null;
 
   return (
-    <div ref={modalRef} onClick={handleOverlayClick} className='modal-overlay'>
-        <div className='modal-content' >
+    <div ref={modalRef} role='dialog' aria-modal='true' onClick={handleOverlayClick} className='modal-overlay'>
+        <div className='modal-content slide-down' ref={contentRef} >
             {children}
             <button className='close-button' onClick={onClose}>Close</button>
         </div>
