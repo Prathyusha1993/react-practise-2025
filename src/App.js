@@ -10,6 +10,7 @@ import FetchUsers from './components/fetchApisndSideEffects/FetchUsers';
 import InfiniteScrollPagination from './components/fetchApisndSideEffects/InfiniteScrollPagination';
 import DynamicFormUsage from './components/formValidation/DynamicFormUsage';
 import FormValidation from './components/formValidation/FormValidation';
+import InfiniteScrollImage from './components/infiniteScrollImageGallery/InfiniteScrollImage';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
 import AppCart from './components/productListWithCartUsingRedux/AppCart';
 import ChatAppMock from './components/realTimeChatAppMockedAPI/ChatAppMock';
@@ -58,6 +59,7 @@ function App() {
       <ModalExampleUsage />
       <ChatAppMock />
       <AppCart />
+      <InfiniteScrollImage />
     </div>
   );
 }
