@@ -19,6 +19,7 @@ import ModalComponent from './components/resuableModal/ModalComponent';
 import ModalExampleUsage from './components/resuableModal/ModalExampleUsage';
 import SearchFilterWithDebounce from './components/searchandFilterWithDebounce/SearchFilterWithDebounce';
 import StopwatchApp from './components/StopwatchApp';
+import TableSortPagination from './components/tableWithSortingPagination/TableSortPagination';
 import TabsEx from './components/tabsComponents/TabsEx';
 import AppTheme from './components/themeUsingContext/AppTheme';
 import TodoApp from './components/TodoApp';
@@ -60,6 +61,7 @@ function App() {
       <ChatAppMock />
       <AppCart />
       <InfiniteScrollImage />
+      <TableSortPagination />
     </div>
   );
 }

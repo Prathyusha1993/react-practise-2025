@@ -1,0 +1,21 @@
+.reusable-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .reusable-tooltip {
+    position: absolute;
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .reusable-tooltip-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5rem;
+  }
