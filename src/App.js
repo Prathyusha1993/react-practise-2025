@@ -11,6 +11,7 @@ import InfiniteScrollPagination from './components/fetchApisndSideEffects/Infini
 import DynamicFormUsage from './components/formValidation/DynamicFormUsage';
 import FormValidation from './components/formValidation/FormValidation';
 import PassDataFromPtoC from './components/PassDataFromPtoC';
+import AppCart from './components/productListWithCartUsingRedux/AppCart';
 import ChatAppMock from './components/realTimeChatAppMockedAPI/ChatAppMock';
 import ExampleUsage from './components/resuableModal/ExampleUsage';
 import ModalComponent from './components/resuableModal/ModalComponent';
@@ -56,6 +57,7 @@ function App() {
       <AppFinal />
       <ModalExampleUsage />
       <ChatAppMock />
+      <AppCart />
     </div>
   );
 }
