@@ -60,7 +60,7 @@ function App() {
       <ModalExampleUsage />
       <ChatAppMock />
       <AppCart />
-      <InfiniteScrollImage />
+      {/* <InfiniteScrollImage /> */}
       <TableSortPagination />
     </div>
   );
